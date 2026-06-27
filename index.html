@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>PF Mitra - Expert PF Withdrawal Assistance</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS Setup -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#3de273",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#763319",
+                        "on-background": "#151e16",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#002109",
+                        "secondary-container": "#aaf0b1",
+                        error: "#ba1a1a",
+                        "on-primary-container": "#004c1f",
+                        surface: "#f7f9f6",
+                        "inverse-surface": "#29332a",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "primary-fixed": "#66ff8e",
+                        "outline-variant": "#bbcbb9",
+                        "tertiary-container": "#f39675",
+                        "on-primary": "#ffffff",
+                        background: "#f7f9f6",
+                        "surface-tint": "#006d2f",
+                        "surface-dim": "#d3ddd0",
+                        "inverse-primary": "#3de273",
+                        "primary-container": "#06c85d",
+                        "on-surface": "#151e16",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#e9f4e6",
+                        tertiary: "#93492e",
+                        "on-secondary-fixed-variant": "#085223",
+                        primary: "#006d2f",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-tertiary-container": "#6f2e14",
+                        "on-surface-variant": "#3c4a3d",
+                        "surface-container-highest": "#dbe5d8",
+                        "surface-variant": "#dbe5d8",
+                        "on-secondary-container": "#2d6f3d",
+                        "secondary-fixed-dim": "#91d699",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#ecf7e9",
+                        "surface-container-high": "#e1ebde",
+                        "surface-container": "#e6f1e3",
+                        outline: "#6c7b6b",
+                        secondary: "#286b39",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f7f9f6",
+                        "secondary-fixed": "#acf3b4",
+                        "on-primary-fixed-variant": "#005322",
+                        "on-primary-fixed": "#002109"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "container-padding": "20px",
+                        "stack-lg": "40px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        gutter: "16px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "button-text": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-md": ["22px", {lineHeight: "1.3", fontWeight: "600"}],
+                        "button-text": ["16px", {lineHeight: "1.0", fontWeight: "600"}],
+                        "body-md": ["15px", {lineHeight: "1.5", fontWeight: "400"}],
+                        "label-sm": ["13px", {lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "500"}],
+                        "display-lg": ["32px", {lineHeight: "1.2", fontWeight: "700"}],
+                        "body-lg": ["17px", {lineHeight: "1.6", fontWeight: "400"}]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { 
+            background-color: #f7f9f6; 
+            color: #151e16; 
+            font-family: 'Inter', sans-serif; 
+            -webkit-tap-highlight-color: transparent;
+            min-height: 100dvh;
+        }
+        .mobile-cta-shadow { box-shadow: 0 10px 15px -3px rgba(0, 109, 47, 0.3), 0 4px 6px -2px rgba(0, 109, 47, 0.05); }
+
+        .feature-card {
+            background-color: #FFFFFF;
+            border: 1px solid #dbe5d8;
+            color: #151e16;
+            opacity: 0.85;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(0.95) translateY(0);
+            will-change: transform, opacity, background-color;
+            z-index: 1;
+        }
+        .feature-card .icon-container {
+            background-color: rgba(0, 109, 47, 0.08);
+            color: #006d2f;
+            transition: all 0.3s ease;
+        }
+        .feature-card .card-text {
+            color: #3c4a3d;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card.active {
+            background-color: #006d2f !important;
+            color: #ffffff !important;
+            border-color: transparent !important;
+            opacity: 1 !important;
+            transform: scale(1.06) translateY(-6px) !important;
+            box-shadow: 0 12px 24px rgba(0, 109, 47, 0.2) !important;
+            z-index: 10 !important;
+        }
+        .feature-card.active .icon-container {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            color: #ffffff !important;
+        }
+        .feature-card.active .card-text {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .feature-card.active h4 {
+            color: #ffffff !important;
+        }
+
+        @keyframes pulse-custom {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 109, 47, 0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(0, 109, 47, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 109, 47, 0); }
+        }
+        .pulse-cta { animation: pulse-custom 2s infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .feature-card {
+                transition: none !important;
+                transform: none !important;
+                will-change: auto;
+            }
+            .pulse-cta { animation: none; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-padding py-3 bg-white/90 backdrop-blur-xl shadow-sm border-b border-surface-variant/30 h-16">
+        <a class="text-xl font-bold text-primary tracking-tight" href="/">PF Mitra</a>
+        <a class="bg-primary text-on-primary px-4 py-2 rounded-full text-[13px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1.5" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." target="_blank">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+            CHAT NOW
+        </a>
+    </header>
+
+    <main class="pt-24 pb-16 max-w-md mx-auto w-full px-container-padding">
+        <!-- Hero Section -->
+        <section class="pb-8 flex flex-col items-center gap-6 text-center">
+            <div class="w-full space-y-4">
+                <div class="inline-flex items-center gap-2 bg-secondary-container/30 text-on-secondary-container px-3.5 py-1 rounded-full border border-secondary-container/40 mx-auto">
+                    <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">MSME & GST Registered</span>
+                </div>
+                <h1 class="font-display-lg text-display-lg text-on-background leading-tight">
+                    Get Your PF Withdrawn Without the Hassle
+                </h1>
+                <p class="text-[15px] text-on-surface-variant leading-relaxed px-2">
+                    Handled by real experts. No more confusing forms or portal glitches. Pay only after success.
+                </p>
+                <div class="pt-4 space-y-3">
+                    <a class="w-full bg-primary text-on-primary py-4 rounded-2xl mobile-cta-shadow flex items-center justify-center gap-2.5 active:scale-[0.97] transition-all font-semibold" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." target="_blank">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        <span class="text-base font-bold">Chat on WhatsApp</span>
+                    </a>
+                    <a class="text-sm text-primary underline underline-offset-4 font-bold active:text-on-primary-container inline-block" href="/guide">
+                        View PF Withdrawal Guide
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[260px] relative mt-4">
+                <div class="absolute -inset-2 bg-primary/10 rounded-3xl -rotate-2"></div>
+                <img alt="Friendly PF Mitra Agent" class="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-lg border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd5Lv56rzB7eYV4l42wzM2721ZOFdLSKAeyj0j1dUAA9KqdD5zDzUtxrYr-5uMEKUrJ2WQ3R2JqB79_Xpq3dJmluRGtHSgioKuzzfJNGg0MBRrLQDW11XPahJw3Ct3RHz_ZbwrjZUzZcaklJ-D5eO64-UuoBnti_lEINotn7hX32KH41ihB1LRDc-izE8iGGwiOkO3LyPwrBlI-XS_5QY0MOLw9gDzs3a1gR9uAbfsbXu6SRxPtQ9-QRwgNKL3ZcC83XDo5aMeKXvZ"/>
+            </div>
+        </section>
+
+        <!-- Trust Strip -->
+        <section class="bg-surface-container-low border border-surface-variant/40 rounded-3xl p-5 my-8">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">person_pin</span>
+                    </div>
+                    <span class="text-sm text-on-surface font-semibold">Real Human Expert Help</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+                    </div>
+                    <span class="text-sm text-on-surface font-semibold">Pay After PF Withdrawal</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">privacy_tip</span>
+                    </div>
+                    <span class="text-sm text-on-surface font-semibold">100% Secure & Private</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-8">
+            <div class="mb-6 text-center">
+                <h2 class="font-headline-md text-xl text-on-surface mb-1">Simple 3-Step Process</h2>
+                <p class="text-xs text-on-surface-variant">We make it easy so you can relax.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="block bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden active:bg-surface-container transition-colors" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20want%20to%20start%20my%20PF%20withdrawal.%20Can%20you%20guide%20me?" target="_blank">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">1</div>
+                    <div class="w-11 h-11 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold">Chat on WhatsApp</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed">Send us a simple hi. Our expert will understand your PF issues immediately.</p>
+                </a>
+                <div class="bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">2</div>
+                    <div class="w-11 h-11 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold">We Handle Everything</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed">Relax while we manage all the paperwork and digital filing for you accurately.</p>
+                </div>
+                <div class="bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">3</div>
+                    <div class="w-11 h-11 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold">Receive Money & Pay</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed">The funds arrive in your bank account. Only then you pay our small fee.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mid-page Guide Link -->
+        <section class="my-6">
+            <div class="bg-primary/5 border border-primary/20 rounded-3xl p-5 flex flex-col gap-3">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl shrink-0">info</span>
+                    <p class="text-xs font-semibold text-on-surface-variant leading-relaxed">
+                        Prefer to do it yourself? We have a complete DIY guide for you.
+                    </p>
+                </div>
+                <a class="text-xs text-primary underline underline-offset-4 font-bold active:text-on-primary-container inline-block" href="/guide">
+                    View PF Withdrawal Guide
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="bg-surface-container border border-surface-variant/40 rounded-3xl p-6 my-8">
+            <h2 class="font-headline-md text-xl text-center mb-6">Why Hundreds Trust Us</h2>
+            <div class="flex flex-col gap-4" id="feature-cards-container">
+                <!-- Card 1 -->
+                <div class="feature-card rounded-2xl p-6 flex flex-col items-center text-center gap-3">
+                    <div class="icon-container w-12 h-12 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl">schedule</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-base transition-colors duration-300">Save Time</h4>
+                        <p class="card-text text-xs leading-relaxed">Avoid the loop of rejected claims and frustrating portal errors.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card rounded-2xl p-6 flex flex-col items-center text-center gap-3">
+                    <div class="icon-container w-12 h-12 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl">description</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-base transition-colors duration-300">No Paperwork Stress</h4>
+                        <p class="card-text text-xs leading-relaxed">We handle the digital filing and documentation accurately for you.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card rounded-2xl p-6 flex flex-col items-center text-center gap-3">
+                    <div class="icon-container w-12 h-12 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl">verified</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-base transition-colors duration-300">Expert Handling</h4>
+                        <p class="card-text text-xs leading-relaxed">Our specialists have resolved 5,000+ complex cases with 100% success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-8">
+            <div class="mb-6 text-center">
+                <h2 class="font-headline-md text-xl text-on-surface">Transparent Pricing</h2>
+                <p class="text-xs text-on-surface-variant mt-0.5">Simple plans. Pay only after success.</p>
+            </div>
+            <div class="flex flex-col gap-6 max-w-sm mx-auto">
+                <div class="bg-white border border-surface-variant p-6 rounded-3xl flex flex-col items-center shadow-sm">
+                    <span class="bg-surface-container px-3.5 py-0.5 rounded-full text-[9px] font-bold text-on-surface-variant mb-4 uppercase tracking-widest">Basic Plan</span>
+                    <div class="text-3xl font-bold mb-0.5 font-display">₹499</div>
+                    <p class="text-on-surface-variant text-[11px] mb-6">Withdrawals below ₹50,000</p>
+                    <ul class="w-full space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Documentation check
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            WhatsApp support
+                        </li>
+                    </ul>
+                    <a class="w-full py-2.5 rounded-xl border-2 border-primary text-primary text-xs font-bold active:bg-primary/5 transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Basic%20plan%20(%E2%82%B9499%20for%20PF%20below%20%E2%82%B950,000)." target="_blank">Select Basic</a>
+                </div>
+                <div class="bg-white border-[3px] border-primary p-6 rounded-3xl flex flex-col items-center relative shadow-xl">
+                    <div class="absolute -top-3 bg-primary text-on-primary px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md">Most Popular</div>
+                    <span class="bg-primary/10 px-3.5 py-0.5 rounded-full text-[9px] font-bold text-primary mb-4 uppercase tracking-widest mt-2">Premium Plan</span>
+                    <div class="text-3xl font-bold mb-0.5 font-display">₹999</div>
+                    <p class="text-on-surface-variant text-[11px] mb-6">Withdrawals above ₹50,000</p>
+                    <ul class="w-full space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Priority processing
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Dedicated manager
+                        </li>
+                        <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Full Success guarantee
+                        </li>
+                    </ul>
+                    <a class="w-full py-3 rounded-xl bg-primary text-on-primary text-sm font-bold shadow-md active:scale-[0.98] transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Premium%20plan%20(%E2%82%B9999%20for%20PF%20above%20%E2%82%B950,000)." target="_blank">Start Premium</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-8">
+            <div class="mb-6 text-center">
+                <h2 class="font-headline-md text-xl text-on-surface">Common Questions</h2>
+            </div>
+            <div class="space-y-3">
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4">Is this service safe?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed">
+                            We are a registered consultancy. We never ask for bank passwords or OTPs. Pay only after success.
+                        </p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4">How long does it take?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed">
+                            Our filing takes &lt;24 hrs. EPFO usually processes in 7-15 working days.
+                        </p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4">Can I do it myself?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed">
+                            Yes! Check our <a class="text-primary font-bold underline underline-offset-4" href="/guide">free step-by-step guide</a> to navigate the portal yourself.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-8">
+            <div class="bg-white rounded-3xl p-6 text-center border border-primary-container/20 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+                <h2 class="font-display-lg text-xl mb-3 relative z-10 font-bold leading-tight">Ready to get your money?</h2>
+                <p class="text-on-surface-variant text-xs mb-6 relative z-10 leading-relaxed">Join 10,000+ happy clients who got their PF without headaches.</p>
+                <a class="w-full bg-primary text-on-primary py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2.5 relative z-10 pulse-cta" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20ready%20to%20withdraw%20my%20PF.%20Let's%20get%20started." target="_blank">
+                    <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Start WhatsApp Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container py-12 px-container-padding text-center border-t border-surface-variant/30">
+        <div class="text-primary font-bold tracking-widest uppercase mb-4">PF MITRA</div>
+        <div class="text-[11px] text-on-surface-variant font-medium space-y-1 mb-6">
+            <p>A service by Anusha HR Consultancy</p>
+            <p>MSME & GST Registered</p>
+        </div>
+        <button class="flex items-center gap-2 text-primary font-bold text-xs bg-primary/10 px-4 py-2 rounded-full active:bg-primary/20 transition-colors mx-auto mb-6" id="shareButton">
+            <span class="material-symbols-outlined text-lg">share</span>
+            Share with Friends
+        </button>
+        <p class="text-[10px] text-on-surface-variant/60 leading-relaxed mb-8 px-4">
+            Disclaimer: We are a private consulting firm. We are not affiliated with EPFO or the Government of India.
+        </p>
+        <div class="flex justify-center gap-6 text-[12px] font-bold text-primary">
+            <a class="active:opacity-50" href="/">Home</a>
+            <a class="active:opacity-50" href="/guide">Guide</a>
+            <a class="active:opacity-50" href="mailto:anushahrconsultancy@gmail.com">Contact</a>
+            <a class="active:opacity-50" href="/privacy">Privacy Policy</a>
+            <a class="active:opacity-50" href="/terms">Terms of Service</a>
+        </div>
+        <div class="mt-10 text-[10px] text-on-surface-variant/40 tracking-tight">© 2026 PF MITRA. ALL RIGHTS RESERVED.</div>
+    </footer>
+
+    <script>
+        (function() {
+            const cards = document.querySelectorAll('.feature-card');
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -40% 0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        cards.forEach(c => c.classList.remove('active'));
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => observer.observe(card));
+
+            // Native Share Implementation
+            const shareBtn = document.getElementById('shareButton');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', async () => {
+                    if (navigator.share) {
+                        try {
+                            await navigator.share({
+                                title: 'PF Mitra - Expert PF Withdrawal',
+                                text: 'Get your PF withdrawn easily with expert help from PF Mitra.',
+                                url: window.location.origin
+                            });
+                        } catch (err) {
+                            console.log('Error sharing:', err);
+                        }
+                    } else {
+                        alert('Sharing is not supported on this browser. Copy link: ' + window.location.origin);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
