@@ -140,12 +140,19 @@
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
     <!-- TopAppBar -->
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-surface-variant/30 h-16 flex items-center justify-between px-container-padding safe-top">
-        <a class="flex items-center gap-2" href="/">
+        <a class="flex items-center gap-2" href="/" data-hi="PF मित्रा">
             <span class="text-xl font-bold tracking-tight text-primary">PF Mitra</span>
         </a>
-        <a class="flex items-center gap-1.5 text-primary font-bold text-[13px] bg-primary/10 px-4 py-2 rounded-full active:scale-95 transition-transform" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." target="_blank">
-            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-            CHAT NOW
+        
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-surface-container border border-surface-variant/40 rounded-full p-0.5">
+            <button id="lang-en" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all bg-primary text-on-primary">English</button>
+            <button id="lang-hi" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant">हिंदी</button>
+        </div>
+
+        <a class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full text-[12px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal. / नमस्ते PF मित्रा, मुझे अपना PF निकालने में मदद चाहिए।" target="_blank">
+            <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+            <span data-hi="चैट">CHAT</span>
         </a>
     </header>
 
@@ -153,8 +160,8 @@
     <main class="flex-grow pt-24 pb-32 px-container-padding max-w-md mx-auto w-full">
         <!-- Hero Section -->
         <section class="mb-6">
-            <h1 class="font-display-lg text-display-lg text-on-background mb-3 leading-tight">How to Withdraw PF Online (2026)</h1>
-            <p class="font-body-md text-on-surface-variant text-base">Your complete step-by-step mobile guide to hassle-free withdrawals.</p>
+            <h1 class="font-display-lg text-display-lg text-on-background mb-3 leading-tight" data-hi="PF ऑनलाइन कैसे निकालें (2026)">How to Withdraw PF Online (2026)</h1>
+            <p class="font-body-md text-on-surface-variant text-base" data-hi="बिना किसी परेशानी के निकासी के लिए आपकी पूरी स्टेप-बाय-स्टेप मोबाइल गाइड।">Your complete step-by-step mobile guide to hassle-free withdrawals.</p>
         </section>
 
         <!-- Essential Info Cards -->
@@ -165,20 +172,20 @@
                     <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                         <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
                     </div>
-                    <h2 class="font-headline-md text-lg text-on-surface">Eligibility</h2>
+                    <h2 class="font-headline-md text-lg text-on-surface" data-hi="पात्रता (Eligibility)">Eligibility</h2>
                 </div>
                 <ul class="space-y-4 font-body-md text-on-surface-variant">
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary text-xl mt-0.5">check</span>
-                        <span>Left job & unemployed for 2+ months</span>
+                        <span data-hi="नौकरी छोड़ दी है और 2 महीने से अधिक समय से बेरोजगार हैं">Left job & unemployed for 2+ months</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary text-xl mt-0.5">check</span>
-                        <span>Aadhaar, PAN & Bank are linked</span>
+                        <span data-hi="आधार, पैन और बैंक अकाउंट लिंक्ड हैं">Aadhaar, PAN & Bank are linked</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary text-xl mt-0.5">check</span>
-                        <span>KYC is updated & verified</span>
+                        <span data-hi="KYC अपडेटेड और वेरिफाइड है">KYC is updated & verified</span>
                     </li>
                 </ul>
             </div>
@@ -189,25 +196,25 @@
                     <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
                         <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">description</span>
                     </div>
-                    <h2 class="font-headline-md text-lg text-on-surface">Documents Required</h2>
+                    <h2 class="font-headline-md text-lg text-on-surface" data-hi="ज़रूरी दस्तावेज़">Documents Required</h2>
                 </div>
                 <div class="grid grid-cols-1 gap-3">
                     <div class="flex items-center gap-3 p-3 bg-secondary/5 rounded-2xl border border-secondary/10">
                         <span class="material-symbols-outlined text-secondary">contact_page</span>
-                        <span class="text-sm font-medium">UAN Number & Password</span>
+                        <span class="text-sm font-medium" data-hi="UAN नंबर और पासवर्ड">UAN Number & Password</span>
                     </div>
                     <div class="flex items-center gap-3 p-3 bg-secondary/5 rounded-2xl border border-secondary/10">
                         <span class="material-symbols-outlined text-secondary">fingerprint</span>
-                        <span class="text-sm font-medium">Aadhaar (OTP linked)</span>
+                        <span class="text-sm font-medium" data-hi="आधार कार्ड (OTP लिंक्ड)">Aadhaar (OTP linked)</span>
                     </div>
                     <div class="flex items-center gap-3 p-3 bg-secondary/5 rounded-2xl border border-secondary/10">
                         <span class="material-symbols-outlined text-secondary">payments</span>
-                        <span class="text-sm font-medium">Bank Account & IFSC</span>
+                        <span class="text-sm font-medium" data-hi="बैंक अकाउंट और IFSC कोड">Bank Account & IFSC</span>
                     </div>
                 </div>
                 <div class="mt-5 p-3 bg-error-container/20 rounded-xl flex items-center gap-3 border border-error-container/30">
                     <span class="text-error text-xl">⚠️</span>
-                    <p class="text-[12px] font-medium text-on-surface-variant">Details must match exactly with EPFO records to avoid rejection.</p>
+                    <p class="text-[12px] font-medium text-on-surface-variant" data-hi="रिजेक्शन से बचने के लिए सभी डिटेल्स EPFO रिकॉर्ड से बिल्कुल मैच होनी चाहिए।">Details must match exactly with EPFO records to avoid rejection.</p>
                 </div>
             </div>
         </section>
@@ -218,16 +225,16 @@
                 <span class="material-symbols-outlined">schedule</span>
             </div>
             <div>
-                <h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-0.5">Processing Time</h3>
-                <p class="text-sm text-on-surface font-semibold">3–15 working days</p>
+                <h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-0.5" data-hi="प्रोसेसिंग का समय">Processing Time</h3>
+                <p class="text-sm text-on-surface font-semibold" data-hi="3 से 15 वर्किंग दिन">3–15 working days</p>
             </div>
         </div>
 
         <!-- Process Steps -->
         <section class="mb-8">
             <div class="flex items-center justify-between mb-6 px-1">
-                <h2 class="font-headline-md text-xl text-on-surface">Withdrawal Steps</h2>
-                <span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">6 STEPS</span>
+                <h2 class="font-headline-md text-xl text-on-surface" data-hi="निकासी के स्टेप्स">Withdrawal Steps</h2>
+                <span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full" data-hi="6 आसान स्टेप्स">6 STEPS</span>
             </div>
             <div class="space-y-4">
                 <!-- Step 1 -->
@@ -235,15 +242,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-base z-10 shadow-lg shadow-primary/20">1</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Login to EPFO</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="EPFO पोर्टल पर लॉगिन करें">Login to EPFO</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Visit UAN Member Portal and sign in with credentials.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="UAN मेंबर पोर्टल पर जाएं और अपने पासवर्ड से लॉगिन करें।">Visit UAN Member Portal and sign in with credentials.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
-                            <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details & screenshot
+                            <span class="material-symbols-outlined text-[14px]">touch_app</span> <span data-hi="डिटेल्स और स्क्रीनशॉट देखने के लिए टैप करें">Tap to see details & screenshot</span>
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed mb-3">
+                            <p class="text-xs text-on-surface leading-relaxed mb-3" data-hi="अपना 12 अंकों का UAN और पासवर्ड तैयार रखें। यदि आवश्यक हो तो 'Forgot Password' लिंक का उपयोग करें। लॉगिन के बाद 'Member Profile' सेक्शन में अपनी बेसिक डिटेल्स चेक करें।">
                                 Ensure you have your 12-digit UAN and password ready. Use the <strong>"Forgot Password"</strong> link if needed. After login, check the 'Member Profile' section for basic details.
                             </p>
                             <div class="aspect-video bg-surface-variant/30 rounded-xl overflow-hidden border border-surface-variant/20 relative">
@@ -258,15 +265,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-base z-10 shadow-sm">2</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Check KYC Status</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="KYC स्टेटस चेक करें">Check KYC Status</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Verify that your profile is fully validated.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="चेक करें कि आपकी प्रोफाइल पूरी तरह वेरिफाइड है या नहीं।">Verify that your profile is fully validated.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
-                            <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details
+                            <span class="material-symbols-outlined text-[14px]">touch_app</span> <span data-hi="डिटेल्स देखने के लिए टैप करें">Tap to see details</span>
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed">
+                            <p class="text-xs text-on-surface leading-relaxed" data-hi="Manage &gt; KYC पर जाएं। लिस्ट में Aadhaar, PAN और Bank Account देखें। इनपर ग्रीन टिक होना चाहिए और 'Verified by UIDAI/Bank' लिखा होना चाहिए।">
                                 Navigate to <strong>Manage &gt; KYC</strong>. Look for "Aadhaar", "PAN", and "Bank Account" in the list. They must have a green tick and say <strong>"Verified by UIDAI/Bank"</strong>.
                             </p>
                         </div>
@@ -278,15 +285,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-base z-10 shadow-sm">3</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Claim Online</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="ऑनलाइन क्लेम करें">Claim Online</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Initiate the withdrawal form from the menu.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="मेन्यू से निकासी (withdrawal) फॉर्म शुरू करें।">Initiate the withdrawal form from the menu.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
                             <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed">
+                            <p class="text-xs text-on-surface leading-relaxed" data-hi="Online Services &gt; Claim (Form-31, 19, 10C &amp; 10D) पर जाएं। आपको अपना पूरा बैंक अकाउंट नंबर दर्ज करके उसे वेरीफाई करना होगा।">
                                 Go to <strong>Online Services &gt; Claim (Form-31, 19, 10C &amp; 10D)</strong>. You will need to verify your bank account by entering the full account number.
                             </p>
                         </div>
@@ -298,15 +305,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-base z-10 shadow-sm">4</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Select Reason</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="कारण (Reason) चुनें">Select Reason</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Choose the type of withdrawal and reason.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="निकासी का प्रकार और कारण चुनें।">Choose the type of withdrawal and reason.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
                             <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed">
+                            <p class="text-xs text-on-surface leading-relaxed" data-hi="एडवांस (हाफ) निकासी के लिए बीमारी, शादी या इलाज जैसा कारण चुनें। फुल निकासी के लिए आपके नियोक्ता (employer) द्वारा 'Exit Date' अपडेट होनी चाहिए।">
                                 For advance (partial), select a reason like medical, marriage, or illness. For full withdrawal, you must have an 'Exit Date' updated by your employer.
                             </p>
                         </div>
@@ -318,15 +325,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-base z-10 shadow-sm">5</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Final Submission</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="फाइनल सबमिशन">Final Submission</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Verify with Aadhaar OTP to complete.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="पूरा करने के लिए आधार OTP से वेरीफाई करें।">Verify with Aadhaar OTP to complete.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
                             <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed">
+                            <p class="text-xs text-on-surface leading-relaxed" data-hi="सुनिश्चित करें कि आपका बैंक अकाउंट और KYC डिटेल्स आपके UAN से सही तरीके से जुड़े हैं। सबमिशन पूरा करने के लिए अपने आधार-लिंक्ड मोबाइल नंबर पर भेजे गए OTP को दर्ज करें।">
                                 Ensure your bank account and KYC details are correctly linked with your UAN. Enter the OTP sent to your Aadhaar-linked mobile number to complete submission.
                             </p>
                         </div>
@@ -338,15 +345,15 @@
                     <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-base z-10 shadow-sm">6</div>
                     <div class="step-card bg-white p-5 rounded-3xl border border-surface-variant/40 box-shadow-ambient active:bg-surface-container cursor-pointer transition-colors tap-highlight-transparent outline-none" tabindex="0">
                         <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-on-surface text-base">Track Claim Status</h3>
+                            <h3 class="font-bold text-on-surface text-base" data-hi="क्लेम स्टेटस ट्रैक करें">Track Claim Status</h3>
                             <span class="material-symbols-outlined expand-icon text-primary transition-transform">expand_more</span>
                         </div>
-                        <p class="text-xs text-on-surface-variant mt-1">Monitor progress until the amount hits your account.</p>
+                        <p class="text-xs text-on-surface-variant mt-1" data-hi="पैसा बैंक खाते में आने तक प्रगति पर नज़र रखें।">Monitor progress until the amount hits your account.</p>
                         <div class="mt-3 flex items-center gap-2 text-[10px] text-primary font-bold uppercase tracking-wider">
                             <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap to see details
                         </div>
                         <div class="details-content bg-primary/5 p-4 rounded-2xl border border-primary/10">
-                            <p class="text-xs text-on-surface leading-relaxed">
+                            <p class="text-xs text-on-surface leading-relaxed" data-hi="Online Services &gt; Track Claim Status पर जाएं। 'Submitted at Portal' से लेकर 'Under Process' जैसे अपडेट देखें। रोजाना चेक करते रहें, आमतौर पर 3-15 वर्किंग दिनों में पैसा बैंक में आ जाता है।">
                                 Navigate to <strong>Online Services &gt; Track Claim Status</strong>. Look for updates such as "Submitted at Portal" to "Under Process". Keep checking daily; funds typically hit your bank within 3-15 working days.
                             </p>
                         </div>
@@ -360,7 +367,7 @@
                     <span class="material-symbols-outlined text-[20px]">lightbulb</span>
                 </div>
                 <p class="text-[13px] text-on-surface leading-relaxed">
-                    <strong>Expert Tip:</strong> Check your claim status daily under "Track Claim Status". Most rejections happen within the first 48 hours.
+                    <strong data-hi="एक्सपर्ट टिप:">Expert Tip:</strong> <span data-hi="रोजाना 'Track Claim Status' में अपना स्टेटस चेक करें। ज़्यादातर रिजेक्शन शुरुआती 48 घंटों में ही होते हैं।">Check your claim status daily under "Track Claim Status". Most rejections happen within the first 48 hours.</span>
                 </p>
             </div>
         </section>
@@ -369,21 +376,21 @@
         <section class="mb-8 bg-error-container/10 rounded-3xl p-6 border border-error-container/30">
             <h2 class="font-headline-md text-lg text-error mb-5 flex items-center gap-2 font-bold">
                 <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">warning</span>
-                Avoid These Rejections
+                <span data-hi="इन रिजेक्शन से बचें">Avoid These Rejections</span>
             </h2>
             <div class="space-y-3">
                 <div class="bg-white p-4 rounded-2xl text-xs border border-error-container/20 shadow-sm flex items-start gap-3">
                     <div class="w-2 h-2 rounded-full bg-error mt-1.5 shrink-0"></div>
-                    <p class="leading-relaxed"><span class="font-bold text-on-surface">Bank Details Mismatch:</span> Your name, IFSC, and account number in EPFO must exactly match your bank passbook/cheque leaf.</p>
+                    <p class="leading-relaxed"><span class="font-bold text-on-surface" data-hi="बैंक डिटेल्स मिसमैच:">Bank Details Mismatch:</span> <span data-hi="EPFO में आपका नाम, IFSC और अकाउंट नंबर आपके बैंक पासबुक या चेक से बिल्कुल मैच होना चाहिए।">Your name, IFSC, and account number in EPFO must exactly match your bank passbook/cheque leaf.</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl text-xs border border-error-container/20 shadow-sm flex items-start gap-3">
                     <div class="w-2 h-2 rounded-full bg-error mt-1.5 shrink-0"></div>
-                    <p class="leading-relaxed"><span class="font-bold text-on-surface">Exit Date Missing:</span> You cannot withdraw full PF if your employer has not updated your Date of Exit. We can help resolve this.</p>
+                    <p class="leading-relaxed"><span class="font-bold text-on-surface" data-hi="एग्जिट डेट (Exit Date) न होना:">Exit Date Missing:</span> <span data-hi="यदि आपके नियोक्ता ने आपकी डेट ऑफ एग्जिट अपडेट नहीं की है, तो आप पूरा PF नहीं निकाल सकते। हम इसे हल करने में मदद कर सकते हैं।">You cannot withdraw full PF if your employer has not updated your Date of Exit. We can help resolve this.</span></p>
                 </div>
             </div>
             <a class="w-full mt-6 py-3.5 rounded-2xl border-2 border-error text-error font-bold text-xs active:scale-95 transition-all tap-highlight-transparent flex items-center justify-center gap-2 bg-white" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20my%20PF%20claim%20got%20rejected.%20Can%20you%20help%20me%20resolve%20this?" target="_blank">
                 <span class="material-symbols-outlined text-[18px]">contact_support</span>
-                GET REJECTION HELP
+                <span data-hi="रिजेक्शन में मदद पाएं">GET REJECTION HELP</span>
             </a>
         </section>
 
@@ -394,24 +401,24 @@
                 <!-- FAQ Item 1 -->
                 <div class="faq-item group border-b border-surface-variant/40">
                     <button class="w-full py-5 flex justify-between items-center text-left tap-highlight-transparent" onclick="this.parentElement.classList.toggle('open')">
-                        <span class="font-semibold text-sm pr-4">Why is my PF claim rejected or stuck?</span>
+                        <span class="font-semibold text-sm pr-4" data-hi="मेरा PF क्लेम रिजेक्ट या पेंडिंग क्यों है?">Why is my PF claim rejected or stuck?</span>
                         <span class="material-symbols-outlined text-primary transition-transform group-[.open]:rotate-45">add</span>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out group-[.open]:max-h-40">
                         <p class="pb-5 text-xs text-on-surface-variant leading-relaxed">
-                            Usually due to small issues like KYC mismatch, wrong bank details, or employer not updating your exit date.
+                            <span data-hi="आमतौर पर छोटी समस्याओं जैसे KYC मिसमैच, गलत बैंक डिटेल्स या नियोक्ता द्वारा एग्जिट डेट अपडेट न करने के कारण ऐसा होता है।">Usually due to small issues like KYC mismatch, wrong bank details, or employer not updating your exit date.</span>
                         </p>
                     </div>
                 </div>
                 <!-- FAQ Item 2 -->
                 <div class="faq-item group border-b border-surface-variant/40">
                     <button class="w-full py-5 flex justify-between items-center text-left tap-highlight-transparent" onclick="this.parentElement.classList.toggle('open')">
-                        <span class="font-semibold text-sm pr-4">Do I need employer approval for PF withdrawal?</span>
+                        <span class="font-semibold text-sm pr-4" data-hi="क्या PF निकालने के लिए कंपनी की मंजूरी ज़रूरी है?">Do I need employer approval for PF withdrawal?</span>
                         <span class="material-symbols-outlined text-primary transition-transform group-[.open]:rotate-45">add</span>
                     </button>
                     <div class="max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out group-[.open]:max-h-40">
                         <p class="pb-5 text-xs text-on-surface-variant leading-relaxed">
-                            No, in most online cases it’s not required. But if your employer hasn’t updated your details, your claim can still get delayed or rejected.
+                            <span data-hi="नहीं, अधिकांश ऑनलाइन मामलों में इसकी आवश्यकता नहीं होती है। लेकिन यदि आपकी कंपनी ने डिटेल्स अपडेट नहीं की हैं, तो आपका क्लेम पेंडिंग या रिजेक्ट हो सकता है।">No, in most online cases it’s not required. But if your employer hasn’t updated your details, your claim can still get delayed or rejected.</span>
                         </p>
                     </div>
                 </div>
@@ -422,18 +429,18 @@
         <section class="bg-primary p-8 rounded-[2rem] text-center text-on-primary shadow-2xl shadow-primary/30 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
-            <h2 class="text-xl font-bold mb-3 relative font-display">Too Complicated?</h2>
-            <p class="text-white/80 text-xs mb-6 relative px-2">Our experts can handle the entire withdrawal process for you. Zero stress, 100% success.</p>
+            <h2 class="text-xl font-bold mb-3 relative font-display" data-hi="बहुत मुश्किल लग रहा है?">Too Complicated?</h2>
+            <p class="text-white/80 text-xs mb-6 relative px-2" data-hi="हमारे एक्सपर्ट्स आपके लिए निकासी की पूरी प्रक्रिया संभाल सकते हैं। जीरो टेंशन, 100% सफलता।">Our experts can handle the entire withdrawal process for you. Zero stress, 100% success.</p>
             <a class="w-full bg-white text-primary font-bold py-4 rounded-2xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform shadow-xl shadow-black/10 relative" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20having%20trouble%20with%20my%20PF%20withdrawal.%20Can%20you%20do%20it%20for%20me?" target="_blank">
                 <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
-                <span class="text-sm font-bold">CHAT ON WHATSAPP</span>
+                <span class="text-sm font-bold" data-hi="WHATSAPP पर चैट करें">CHAT ON WHATSAPP</span>
             </a>
         </section>
     </main>
 
     <!-- Sticky Mobile Action Bar -->
     <div class="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-xl border-t border-surface-variant/30 px-container-padding py-3 flex items-center gap-3 z-50 safe-bottom h-20">
-        <a class="flex-1 bg-primary text-white py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm font-bold active:scale-95 transition-all shadow-lg shadow-primary/20 text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20assistance%20with%20my%20PF%20withdrawal." target="_blank">
+        <a class="flex-1 bg-primary text-white py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm font-bold active:scale-95 transition-all shadow-lg shadow-primary/20 text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20assistance%20with%20my%20PF%20withdrawal. / नमस्ते PF मित्रा, मुझे अपना PF निकालने में मदद चाहिए।" target="_blank" data-hi="मदद चाहिए">
             <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
             Help Me
         </a>
@@ -526,5 +533,91 @@
             });
         }
     </script>
+
+    <script>
+        // Language Switcher Logic
+        (function() {
+            const btnEn = document.getElementById('lang-en');
+            const btnHi = document.getElementById('lang-hi');
+
+            function setLanguage(lang) {
+                if (lang === 'hi') {
+                    if (btnHi) {
+                        btnHi.classList.add('bg-primary', 'text-on-primary');
+                        btnHi.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnEn) {
+                        btnEn.classList.add('text-on-surface-variant');
+                        btnEn.classList.remove('bg-primary', 'text-on-primary');
+                    }
+                    
+                    document.querySelectorAll('[data-hi]').forEach(el => {
+                        if (!el.dataset.enText) {
+                            el.dataset.enText = el.innerHTML;
+                        }
+                        el.innerHTML = el.getAttribute('data-hi');
+                    });
+                } else {
+                    if (btnEn) {
+                        btnEn.classList.add('bg-primary', 'text-on-primary');
+                        btnEn.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnHi) {
+                        btnHi.classList.add('text-on-surface-variant');
+                        btnHi.classList.remove('bg-primary', 'text-on-primary');
+                    }
+                    
+                    document.querySelectorAll('[data-hi]').forEach(el => {
+                        if (el.dataset.enText) {
+                            el.innerHTML = el.dataset.enText;
+                        }
+                    });
+                }
+                localStorage.setItem('preferred-lang', lang);
+                // Also dispatch custom event in case multiple switchers exist
+                window.dispatchEvent(new CustomEvent('langChanged', { detail: lang }));
+            }
+
+            if (btnEn && btnHi) {
+                btnEn.addEventListener('click', () => setLanguage('en'));
+                btnHi.addEventListener('click', () => setLanguage('hi'));
+                
+                // Load preference
+                const savedLang = localStorage.getItem('preferred-lang') || 'en';
+                // Small delay to ensure other components render
+                setTimeout(() => setLanguage(savedLang), 50);
+            }
+
+            // Sync language across windows/tabs
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'preferred-lang') {
+                    setLanguage(e.newValue);
+                }
+            });
+            window.addEventListener('langChanged', (e) => {
+                const lang = e.detail;
+                if (lang === 'hi') {
+                    if (btnHi) {
+                        btnHi.classList.add('bg-primary', 'text-on-primary');
+                        btnHi.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnEn) {
+                        btnEn.classList.add('text-on-surface-variant');
+                        btnEn.classList.remove('bg-primary', 'text-on-primary');
+                    }
+                } else {
+                    if (btnEn) {
+                        btnEn.classList.add('bg-primary', 'text-on-primary');
+                        btnEn.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnHi) {
+                        btnHi.classList.add('text-on-surface-variant');
+                        btnHi.classList.remove('bg-primary', 'text-on-primary');
+                    }
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
