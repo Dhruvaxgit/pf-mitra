@@ -184,7 +184,7 @@
             <button id="lang-hi" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant">हिंदी</button>
         </div>
 
-        <a class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full text-[12px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal. / नमस्ते PF मित्रा, मुझे अपना PF निकालने में मदद चाहिए।" target="_blank">
+        <a class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full text-[12px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20me%20help%20chahiye." target="_blank">
             <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
             <span data-hi="चैट">CHAT</span>
         </a>
@@ -205,7 +205,7 @@
                     Handled by real experts. No more confusing forms or portal glitches. Pay only after success.
                 </p>
                 <div class="pt-4 space-y-3">
-                    <a class="w-full bg-primary text-on-primary py-4 rounded-2xl mobile-cta-shadow flex items-center justify-center gap-2.5 active:scale-[0.97] transition-all font-semibold" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." target="_blank">
+                    <a class="w-full bg-primary text-on-primary py-4 rounded-2xl mobile-cta-shadow flex items-center justify-center gap-2.5 active:scale-[0.97] transition-all font-semibold" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20me%20help%20chahiye." target="_blank">
                         <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
                         <span class="text-base font-bold" data-hi="WhatsApp पर चैट करें">Chat on WhatsApp</span>
                     </a>
@@ -254,7 +254,7 @@
                 <p class="text-xs text-on-surface-variant" data-hi="हम काम आसान बनाते हैं ताकि आप आराम कर सकें।">We make it easy so you can relax.</p>
             </div>
             <div class="flex flex-col gap-4">
-                <a class="block bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden active:bg-surface-container transition-colors" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20want%20to%20start%20my%20PF%20withdrawal.%20Can%20you%20guide%20me?" target="_blank">
+                <a class="block bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden active:bg-surface-container transition-colors" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20want%20to%20start%20my%20PF%20withdrawal.%20Can%20you%20guide%20me?" data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20shuru%20karna%20hai%2C%20guide%20kijiye." target="_blank">
                     <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">1</div>
                     <div class="w-11 h-11 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mb-3">
                         <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
@@ -502,6 +502,9 @@
         })();
     </script>
 
+    
+
+
     <script>
         // Language Switcher Logic
         (function() {
@@ -519,11 +522,22 @@
                         btnEn.classList.remove('bg-primary', 'text-on-primary');
                     }
                     
+                    // Translate elements text
                     document.querySelectorAll('[data-hi]').forEach(el => {
                         if (!el.dataset.enText) {
                             el.dataset.enText = el.innerHTML;
                         }
                         el.innerHTML = el.getAttribute('data-hi');
+                    });
+
+                    // Translate WhatsApp pre-filled message links
+                    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+                        if (!el.dataset.enHref) {
+                            el.dataset.enHref = el.getAttribute('href');
+                        }
+                        if (el.getAttribute('data-hi-href')) {
+                            el.setAttribute('href', el.getAttribute('data-hi-href'));
+                        }
                     });
                 } else {
                     if (btnEn) {
@@ -535,14 +549,21 @@
                         btnHi.classList.remove('bg-primary', 'text-on-primary');
                     }
                     
+                    // Restore elements text
                     document.querySelectorAll('[data-hi]').forEach(el => {
                         if (el.dataset.enText) {
                             el.innerHTML = el.dataset.enText;
                         }
                     });
+
+                    // Restore WhatsApp links
+                    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+                        if (el.dataset.enHref) {
+                            el.setAttribute('href', el.dataset.enHref);
+                        }
+                    });
                 }
                 localStorage.setItem('preferred-lang', lang);
-                // Also dispatch custom event in case multiple switchers exist
                 window.dispatchEvent(new CustomEvent('langChanged', { detail: lang }));
             }
 
@@ -550,9 +571,7 @@
                 btnEn.addEventListener('click', () => setLanguage('en'));
                 btnHi.addEventListener('click', () => setLanguage('hi'));
                 
-                // Load preference
                 const savedLang = localStorage.getItem('preferred-lang') || 'en';
-                // Small delay to ensure other components render
                 setTimeout(() => setLanguage(savedLang), 50);
             }
 

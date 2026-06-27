@@ -150,7 +150,7 @@
             <button id="lang-hi" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant">हिंदी</button>
         </div>
 
-        <a class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full text-[12px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal. / नमस्ते PF मित्रा, मुझे अपना PF निकालने में मदद चाहिए।" target="_blank">
+        <a class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full text-[12px] font-bold active:scale-95 transition-all shadow-sm flex items-center gap-1" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20help%20with%20my%20PF%20withdrawal." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20me%20help%20chahiye." target="_blank">
             <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
             <span data-hi="चैट">CHAT</span>
         </a>
@@ -388,7 +388,7 @@
                     <p class="leading-relaxed"><span class="font-bold text-on-surface" data-hi="एग्जिट डेट (Exit Date) न होना:">Exit Date Missing:</span> <span data-hi="यदि आपके नियोक्ता ने आपकी डेट ऑफ एग्जिट अपडेट नहीं की है, तो आप पूरा PF नहीं निकाल सकते। हम इसे हल करने में मदद कर सकते हैं।">You cannot withdraw full PF if your employer has not updated your Date of Exit. We can help resolve this.</span></p>
                 </div>
             </div>
-            <a class="w-full mt-6 py-3.5 rounded-2xl border-2 border-error text-error font-bold text-xs active:scale-95 transition-all tap-highlight-transparent flex items-center justify-center gap-2 bg-white" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20my%20PF%20claim%20got%20rejected.%20Can%20you%20help%20me%20resolve%20this?" target="_blank">
+            <a class="w-full mt-6 py-3.5 rounded-2xl border-2 border-error text-error font-bold text-xs active:scale-95 transition-all tap-highlight-transparent flex items-center justify-center gap-2 bg-white" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20my%20PF%20claim%20got%20rejected.%20Can%20you%20help%20me%20resolve%20this?" data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mera%20PF%20claim%20reject%20ho%20gaya%20hai%2C%20solve%20karne%20me%20help%20chahiye." target="_blank">
                 <span class="material-symbols-outlined text-[18px]">contact_support</span>
                 <span data-hi="रिजेक्शन में मदद पाएं">GET REJECTION HELP</span>
             </a>
@@ -431,7 +431,7 @@
             <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <h2 class="text-xl font-bold mb-3 relative font-display" data-hi="बहुत मुश्किल लग रहा है?">Too Complicated?</h2>
             <p class="text-white/80 text-xs mb-6 relative px-2" data-hi="हमारे एक्सपर्ट्स आपके लिए निकासी की पूरी प्रक्रिया संभाल सकते हैं। जीरो टेंशन, 100% सफलता।">Our experts can handle the entire withdrawal process for you. Zero stress, 100% success.</p>
-            <a class="w-full bg-white text-primary font-bold py-4 rounded-2xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform shadow-xl shadow-black/10 relative" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20having%20trouble%20with%20my%20PF%20withdrawal.%20Can%20you%20do%20it%20for%20me?" target="_blank">
+            <a class="w-full bg-white text-primary font-bold py-4 rounded-2xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform shadow-xl shadow-black/10 relative" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20having%20trouble%20with%20my%20PF%20withdrawal.%20Can%20you%20do%20it%20for%20me?" data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20karwane%20me%20dikkati%20aa%20rahi%20hai%2C%20mere%20liye%20kar%20dijiye." target="_blank">
                 <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
                 <span class="text-sm font-bold" data-hi="WHATSAPP पर चैट करें">CHAT ON WHATSAPP</span>
             </a>
@@ -534,6 +534,9 @@
         }
     </script>
 
+    
+
+
     <script>
         // Language Switcher Logic
         (function() {
@@ -551,11 +554,22 @@
                         btnEn.classList.remove('bg-primary', 'text-on-primary');
                     }
                     
+                    // Translate elements text
                     document.querySelectorAll('[data-hi]').forEach(el => {
                         if (!el.dataset.enText) {
                             el.dataset.enText = el.innerHTML;
                         }
                         el.innerHTML = el.getAttribute('data-hi');
+                    });
+
+                    // Translate WhatsApp pre-filled message links
+                    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+                        if (!el.dataset.enHref) {
+                            el.dataset.enHref = el.getAttribute('href');
+                        }
+                        if (el.getAttribute('data-hi-href')) {
+                            el.setAttribute('href', el.getAttribute('data-hi-href'));
+                        }
                     });
                 } else {
                     if (btnEn) {
@@ -567,14 +581,21 @@
                         btnHi.classList.remove('bg-primary', 'text-on-primary');
                     }
                     
+                    // Restore elements text
                     document.querySelectorAll('[data-hi]').forEach(el => {
                         if (el.dataset.enText) {
                             el.innerHTML = el.dataset.enText;
                         }
                     });
+
+                    // Restore WhatsApp links
+                    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+                        if (el.dataset.enHref) {
+                            el.setAttribute('href', el.dataset.enHref);
+                        }
+                    });
                 }
                 localStorage.setItem('preferred-lang', lang);
-                // Also dispatch custom event in case multiple switchers exist
                 window.dispatchEvent(new CustomEvent('langChanged', { detail: lang }));
             }
 
@@ -582,9 +603,7 @@
                 btnEn.addEventListener('click', () => setLanguage('en'));
                 btnHi.addEventListener('click', () => setLanguage('hi'));
                 
-                // Load preference
                 const savedLang = localStorage.getItem('preferred-lang') || 'en';
-                // Small delay to ensure other components render
                 setTimeout(() => setLanguage(savedLang), 50);
             }
 
