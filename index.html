@@ -171,6 +171,135 @@
             }
             .pulse-cta { animation: none; }
         }
+
+        /* e-Shram Color Inversion Styles */
+        body.theme-shram {
+            background-color: #006d2f !important;
+            color: #ffffff !important;
+        }
+        body.theme-shram header {
+            background-color: rgba(0, 83, 34, 0.9) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        body.theme-shram header a {
+            color: #ffffff !important;
+        }
+        body.theme-shram header a.bg-primary {
+            background-color: #f7f9f6 !important;
+            color: #006d2f !important;
+        }
+        body.theme-shram main h1,
+        body.theme-shram main h2,
+        body.theme-shram main h3,
+        body.theme-shram main h4,
+        body.theme-shram main p,
+        body.theme-shram main span,
+        body.theme-shram main li {
+            color: #ffffff !important;
+        }
+        body.theme-shram main p.text-on-surface-variant,
+        body.theme-shram main p.text-xs,
+        body.theme-shram main span.card-text,
+        body.theme-shram main span.text-on-surface-variant {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        /* Service Switcher in Shram mode */
+        body.theme-shram #service-pf {
+            background-color: transparent !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            box-shadow: none !important;
+        }
+        body.theme-shram #service-shram {
+            background-color: #f7f9f6 !important;
+            color: #006d2f !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        }
+        /* Language Switcher in Shram mode */
+        body.theme-shram #lang-en.bg-primary,
+        body.theme-shram #lang-hi.bg-primary {
+            background-color: #f7f9f6 !important;
+            color: #006d2f !important;
+        }
+        body.theme-shram #lang-en:not(.bg-primary),
+        body.theme-shram #lang-hi:not(.bg-primary) {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        /* Switcher containers */
+        body.theme-shram header div.flex.items-center.bg-surface-container,
+        body.theme-shram main div.flex.bg-white\/80 {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.15) !important;
+        }
+        /* Cards */
+        body.theme-shram .bg-white,
+        body.theme-shram .feature-card,
+        body.theme-shram .bg-surface-container-low,
+        body.theme-shram .bg-surface-container {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+        }
+        body.theme-shram .feature-card .icon-container {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+        }
+        body.theme-shram .feature-card .card-text {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        /* Buttons in e-Shram mode */
+        body.theme-shram main a.bg-primary,
+        body.theme-shram main button.bg-primary,
+        body.theme-shram .fixed.bottom-0 a.bg-primary {
+            background-color: #f7f9f6 !important;
+            color: #006d2f !important;
+            box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05) !important;
+        }
+        body.theme-shram main a.border-primary,
+        body.theme-shram main button.border-primary {
+            border-color: #f7f9f6 !important;
+            color: #ffffff !important;
+        }
+        /* FAQs */
+        body.theme-shram details {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.15) !important;
+        }
+        body.theme-shram details h4,
+        body.theme-shram details span.material-symbols-outlined {
+            color: #ffffff !important;
+        }
+        body.theme-shram details p {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+        /* Sticky Mobile Action Bar */
+        body.theme-shram .fixed.bottom-0 {
+            background-color: rgba(0, 83, 34, 0.9) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        body.theme-shram .fixed.bottom-0 button#shareBtn {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+        }
+        /* Footer protection */
+        body.theme-shram footer {
+            background-color: #e6f1e3 !important;
+            border-color: #dbe5d8 !important;
+            color: #151e16 !important;
+        }
+        body.theme-shram footer p,
+        body.theme-shram footer span,
+        body.theme-shram footer a {
+            color: #3c4a3d !important;
+        }
+        body.theme-shram footer div.text-primary,
+        body.theme-shram footer button.text-primary,
+        body.theme-shram footer a.active\:text-primary {
+            color: #006d2f !important;
+        }
+        body.theme-shram footer button#shareButton {
+            background-color: rgba(0, 109, 47, 0.08) !important;
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container">
@@ -758,6 +887,7 @@
 
             function setService(mode) {
                 if (mode === 'shram') {
+                    document.body.classList.add('theme-shram');
                     if (btnShram) {
                         btnShram.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
                         btnShram.classList.remove('text-on-surface-variant');
@@ -771,6 +901,7 @@
                     document.querySelectorAll('.mode-shram').forEach(el => el.classList.remove('hidden'));
                     document.querySelectorAll('.mode-pf').forEach(el => el.classList.add('hidden'));
                 } else {
+                    document.body.classList.remove('theme-shram');
                     if (btnPf) {
                         btnPf.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
                         btnPf.classList.remove('text-on-surface-variant');
