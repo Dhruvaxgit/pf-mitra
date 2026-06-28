@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <title>PF Mitra - Expert PF Withdrawal Assistance</title>
+    <title>PF Mitra - Expert PF Withdrawal & e-Shram Registration Assistance</title>
     <!-- Google Fonts & Material Symbols -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -191,9 +191,16 @@
     </header>
 
     <main class="pt-24 pb-16 max-w-md mx-auto w-full px-container-padding">
+        <!-- Service Switcher (Withdraw PF / Create e-Shram Card) -->
+        <div class="flex bg-white/80 border border-surface-variant/40 rounded-2xl p-1 max-w-xs mx-auto mb-8 shadow-sm">
+            <button id="service-pf" class="flex-grow py-2 rounded-xl text-xs font-bold transition-all bg-primary text-on-primary shadow-sm" data-hi="PF निकालें">Withdraw PF</button>
+            <button id="service-shram" class="flex-grow py-2 rounded-xl text-xs font-bold transition-all text-on-surface-variant" data-hi="e-Shram कार्ड">e-Shram Card</button>
+        </div>
+
         <!-- Hero Section -->
         <section class="pb-8 flex flex-col items-center gap-6 text-center">
-            <div class="w-full space-y-4">
+            <!-- PF Hero Content -->
+            <div class="mode-pf w-full space-y-4">
                 <div class="inline-flex items-center gap-2 bg-secondary-container/30 text-on-secondary-container px-3.5 py-1 rounded-full border border-secondary-container/40 mx-auto">
                     <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
                     <span class="text-[10px] font-bold uppercase tracking-widest" data-hi="MSME और GST रजिस्टर्ड">MSME & GST Registered</span>
@@ -214,6 +221,28 @@
                     </a>
                 </div>
             </div>
+
+            <!-- e-Shram Hero Content -->
+            <div class="mode-shram hidden w-full space-y-4">
+                <div class="inline-flex items-center gap-2 bg-secondary-container/30 text-on-secondary-container px-3.5 py-1 rounded-full border border-secondary-container/40 mx-auto">
+                    <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest" data-hi="MSME और GST रजिस्टर्ड">MSME & GST Registered</span>
+                </div>
+                <h1 class="font-display-lg text-display-lg text-on-background leading-tight" data-hi="e-Shram कार्ड आज ही बनवाएं: 5 मिनट में हेल्थ इंश्योरेंस और पेंशन का लाभ उठाएं">
+                    Get Your e-Shram Card Today: Unlock Health Insurance & Pension in 5 Minutes.
+                </h1>
+                <p class="text-[15px] text-on-surface-variant leading-relaxed px-2" data-hi="फॉर्म भरने की माथापच्ची से बचें। हम टेक्निकल डाटा एंट्री और कोडिंग खुद संभालेंगे और आपका कार्ड PDF सीधा WhatsApp पर भेजेंगे।">
+                    Avoid the "form-filling" frustration. We handle the technical registration and share your e-Shram card PDF directly on WhatsApp.
+                </p>
+                <div class="pt-4 space-y-3">
+                    <a class="w-full bg-primary text-on-primary py-4 rounded-2xl mobile-cta-shadow flex items-center justify-center gap-2.5 active:scale-[0.97] transition-all font-semibold" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20want%20to%20create%20my%20e-Shram%20Card." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20apna%20e-Shram%20card%20banwana%20hai." target="_blank">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        <span class="text-base font-bold" data-hi="WhatsApp पर चैट करें">Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Video Player (Shared) -->
             <div class="w-full max-w-[320px] relative mt-4">
                 <div class="absolute -inset-2 bg-primary/10 rounded-3xl -rotate-2"></div>
                 <video class="relative z-10 w-full aspect-video object-cover rounded-3xl shadow-lg border-4 border-white" controls autoplay muted loop playsinline preload="metadata">
@@ -236,7 +265,8 @@
                     <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                         <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">payments</span>
                     </div>
-                    <span class="text-sm text-on-surface font-semibold" data-hi="पैसा मिलने के बाद ही फीस दें">Pay After PF Withdrawal</span>
+                    <span class="mode-pf text-sm text-on-surface font-semibold" data-hi="पैसा मिलने के बाद ही फीस दें">Pay After PF Withdrawal</span>
+                    <span class="mode-shram hidden text-sm text-on-surface font-semibold" data-hi="कार्ड मिलने के बाद ही फीस दें">Pay After Card Delivery</span>
                 </div>
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
@@ -247,8 +277,8 @@
             </div>
         </section>
 
-        <!-- How It Works -->
-        <section class="py-8">
+        <!-- How It Works (PF Mode) -->
+        <section class="mode-pf py-8">
             <div class="mb-6 text-center">
                 <h2 class="font-headline-md text-xl text-on-surface mb-1" data-hi="3 आसान स्टेप्स">Simple 3-Step Process</h2>
                 <p class="text-xs text-on-surface-variant" data-hi="हम काम आसान बनाते हैं ताकि आप आराम कर सकें।">We make it easy so you can relax.</p>
@@ -281,8 +311,42 @@
             </div>
         </section>
 
-        <!-- Mid-page Guide Link -->
-        <section class="my-6">
+        <!-- How It Works (e-Shram Mode) -->
+        <section class="mode-shram hidden py-8">
+            <div class="mb-6 text-center">
+                <h2 class="font-headline-md text-xl text-on-surface mb-1" data-hi="3 आसान स्टेप्स">Simple 3-Step Process</h2>
+                <p class="text-xs text-on-surface-variant" data-hi="हम काम आसान बनाते हैं ताकि आप आराम कर सकें।">We make it easy so you can relax.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="block bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden active:bg-surface-container transition-colors" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20want%20to%20create%20my%20e-Shram%20Card." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20apna%20e-Shram%20card%20banwana%20hai." target="_blank">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">1</div>
+                    <div class="w-11 h-11 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold" data-hi="WhatsApp पर चैट करें">Chat on WhatsApp</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="हमें बस एक 'Hi' भेजें। हमारे एक्सपर्ट तुरंत आपसे संपर्क करेंगे।">Send us a simple hi. Our expert will understand your needs immediately.</p>
+                </a>
+                <div class="bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">2</div>
+                    <div class="w-11 h-11 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold" data-hi="हम रजिस्ट्रेशन करेंगे">We Handle Registration</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="आप आराम करें, हम सरकारी पोर्टल पर आपकी जानकारी को सही-सही भरकर कार्ड बनाएंगे।">Relax while we manage the application, verify details, and fill the official form accurately.</p>
+                </div>
+                <div class="bg-white p-5 rounded-3xl border border-surface-variant/40 shadow-sm relative overflow-hidden">
+                    <div class="text-5xl font-bold text-surface-variant/20 absolute -top-2 -right-1 opacity-20 font-display">3</div>
+                    <div class="w-11 h-11 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary mb-3">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+                    </div>
+                    <h3 class="text-base mb-1 font-bold" data-hi="PDF पाएं और फीस दें">Get PDF & Pay</h3>
+                    <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="हम आपका e-Shram कार्ड PDF सीधा WhatsApp पर भेजेंगे। काम पूरा होने पर ही फीस दें।">We share your official e-Shram card PDF directly on WhatsApp. Only then you pay our small fee.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mid-page Guide Link (PF Mode Only) -->
+        <section class="mode-pf my-6">
             <div class="bg-primary/5 border border-primary/20 rounded-3xl p-5 flex flex-col gap-3">
                 <div class="flex items-start gap-3">
                     <span class="material-symbols-outlined text-primary text-xl shrink-0">info</span>
@@ -333,13 +397,86 @@
             </div>
         </section>
 
+        <!-- e-Shram Benefits Section (e-Shram Mode Only) -->
+        <section class="mode-shram hidden bg-surface-container border border-surface-variant/40 rounded-3xl p-5 my-8">
+            <h2 class="font-headline-md text-xl text-center mb-6" data-hi="e-Shram कार्ड के बड़े फायदे">e-Shram Card Benefits</h2>
+            <div class="space-y-4">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="₹2 लाख का एक्सीडेंटल बीमा">Accidental Insurance Cover</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="पंजीकृत श्रमिकों को ₹2 लाख का दुर्घटना मृत्यु और पूर्ण विकलांगता कवर, और ₹1 लाख का आंशिक विकलांगता कवर मिलता है।">
+                            Registered workers receive an accidental death and total permanent disability cover of ₹2 Lakh, and partial permanent disability cover of ₹1 Lakh.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="कैशलेस इलाज (PMJAY)">Cashless Health Coverage (PMJAY)</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="आपका रजिस्ट्रेशन आपको आयुष्मान भारत योजना से जोड़ता है, जिससे आपके परिवार को हर साल ₹5 लाख तक का मुफ्त इलाज मिलता है।">
+                            Your registration links you to the Ayushman Bharat scheme, providing cashless medical treatment of up to ₹5 Lakh per family per year at empaneled hospitals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">savings</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="₹3,000 की मासिक पेंशन (PM-SYM)">Guaranteed Pension (PM-SYM)</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="e-Shram कार्ड आपके सुरक्षित भविष्य का पहला कदम है, जिसमें 60 वर्ष की आयु के बाद ₹3,000 की न्यूनतम मासिक पेंशन की गारंटी मिलती है।">
+                            e-Shram is the first step toward securing your future with a guaranteed minimum monthly pension of ₹3,000 after you turn 60.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">switch_access_shortcut</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="सरकारी योजनाओं की पोर्टेबिलिटी">Government Scheme Portability</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="आधार से जुड़ा 12-अंकों का UAN यह सुनिश्चित करता है कि आपके लाभ पूरे देश में लागू रहें, चाहे आप काम के लिए किसी भी शहर में जाएं।">
+                            Your Aadhaar-linked UAN ensures your welfare benefits are portable, meaning you don't lose your safety net even if you move between cities for work.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="बिना गलती के फ़ास्ट रजिस्ट्रेशन">Fast & Error-Free Registration</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="फॉर्म भरने की झंझट और गलतियों से बचें। हम टेक्निकल डाटा एंट्री और काम की कोडिंग बिल्कुल सही करेंगे ताकि क्लेम पहली बार में पास हो।">
+                            Avoid the "form-filling" frustration. We handle the technical data entry and correct occupation coding to ensure your application is submitted perfectly the first time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pricing Section -->
         <section class="py-8">
             <div class="mb-6 text-center">
                 <h2 class="font-headline-md text-xl text-on-surface" data-hi="साफ़ और स्पष्ट दाम">Transparent Pricing</h2>
                 <p class="text-xs text-on-surface-variant mt-0.5" data-hi="आसान प्लान। काम होने के बाद ही फीस दें।">Simple plans. Pay only after success.</p>
             </div>
-            <div class="flex flex-col gap-6 max-w-sm mx-auto">
+            
+            <!-- PF Pricing Cards -->
+            <div class="mode-pf flex flex-col gap-6 max-w-sm mx-auto">
                 <div class="bg-white border border-surface-variant p-6 rounded-3xl flex flex-col items-center shadow-sm">
                     <span class="bg-surface-container px-3.5 py-0.5 rounded-full text-[9px] font-bold text-on-surface-variant mb-4 uppercase tracking-widest" data-hi="बेसिक प्लान">Basic Plan</span>
                     <div class="text-3xl font-bold mb-0.5 font-display">₹499</div>
@@ -354,7 +491,7 @@
                             <span data-hi="WhatsApp सपोर्ट">WhatsApp support</span>
                         </li>
                     </ul>
-                    <a class="w-full py-2.5 rounded-xl border-2 border-primary text-primary text-xs font-bold active:bg-primary/5 transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Basic%20plan%20(%E2%82%B9499%20for%20PF%20below%20%E2%82%B950,000). / नमस्ते, मैं ₹499 वाले बेसिक प्लान में रूचि रखता हूँ।" target="_blank" data-hi="बेसिक प्लान चुनें">Select Basic</a>
+                    <a class="w-full py-2.5 rounded-xl border-2 border-primary text-primary text-xs font-bold active:bg-primary/5 transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Basic%20plan%20(%E2%82%B9499%20for%20PF%20below%20%E2%82%B950,000)." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20Basic%20plan%20(Rs%20499)%20me%20interest%20hai." target="_blank" data-hi="बेसिक प्लान चुनें">Select Basic</a>
                 </div>
                 <div class="bg-white border-[3px] border-primary p-6 rounded-3xl flex flex-col items-center relative shadow-xl">
                     <div class="absolute -top-3 bg-primary text-on-primary px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md" data-hi="सबसे लोकप्रिय">Most Popular</div>
@@ -375,8 +512,31 @@
                             <span data-hi="सफलता की पूरी गारंटी">Full Success guarantee</span>
                         </li>
                     </ul>
-                    <a class="w-full py-3 rounded-xl bg-primary text-on-primary text-sm font-bold shadow-md active:scale-[0.98] transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Premium%20plan%20(%E2%82%B9999%20for%20PF%20above%20%E2%82%B950,000). / नमस्ते, मैं ₹999 वाले प्रीमियम प्लान में रूचि रखता हूँ।" target="_blank" data-hi="प्रीमियम प्लान शुरू करें">Start Premium</a>
+                    <a class="w-full py-3 rounded-xl bg-primary text-on-primary text-sm font-bold shadow-md active:scale-[0.98] transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20the%20Premium%20plan%20(%E2%82%B9999%20for%20PF%20above%20%E2%82%B950,000)." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20Premium%20plan%20(Rs%20999)%20me%20interest%20hai." target="_blank" data-hi="प्रीमियम प्लान शुरू करें">Start Premium</a>
                 </div>
+            </div>
+
+            <!-- e-Shram Pricing Card -->
+            <div class="mode-shram hidden bg-white border-[3px] border-primary p-6 rounded-3xl flex flex-col items-center relative shadow-xl max-w-sm mx-auto">
+                <div class="absolute -top-3 bg-primary text-on-primary px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider shadow-md" data-hi="सबसे आसान व सुरक्षित">Fast & Secure</div>
+                <span class="bg-primary/10 px-3.5 py-0.5 rounded-full text-[9px] font-bold text-primary mb-4 uppercase tracking-widest mt-2" data-hi="रजिस्ट्रेशन सपोर्ट">Registration Support</span>
+                <div class="text-3xl font-bold mb-0.5 font-display">₹99</div>
+                <p class="text-on-surface-variant text-[11px] mb-6" data-hi="कार्ड आपके WhatsApp पर मिलने के बाद ही भुगतान करें">Pay only after success / PDF delivery</p>
+                <ul class="w-full space-y-3 mb-6">
+                    <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span data-hi="सरकारी रिकॉर्ड में सही एंट्री">Official database registration</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span data-hi="WhatsApp पर e-Shram कार्ड PDF">e-Shram card PDF on WhatsApp</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span data-hi="मदद के लिए लाइव सपोर्ट">Live support for queries</span>
+                    </li>
+                </ul>
+                <a class="w-full py-3 rounded-xl bg-primary text-on-primary text-sm font-bold shadow-md active:scale-[0.98] transition-all text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20interested%20in%20creating%20my%20e-Shram%20Card%20for%20%E2%82%B999." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20Rs%2099%20wala%20e-Shram%20card%20banwana%20hai." target="_blank" data-hi="कार्ड बनवाना शुरू करें">Get e-Shram Card</a>
             </div>
         </section>
 
@@ -385,7 +545,9 @@
             <div class="mb-6 text-center">
                 <h2 class="font-headline-md text-xl text-on-surface" data-hi="अक्सर पूछे जाने वाले सवाल">Common Questions</h2>
             </div>
-            <div class="space-y-3">
+
+            <!-- PF FAQs -->
+            <div class="mode-pf space-y-3">
                 <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
                     <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
                         <h4 class="font-semibold text-sm pr-4" data-hi="क्या यह सर्विस सुरक्षित है?">Is this service safe?</h4>
@@ -420,15 +582,64 @@
                     </div>
                 </details>
             </div>
+
+            <!-- e-Shram FAQs -->
+            <div class="mode-shram hidden space-y-3">
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4" data-hi="e-Shram कार्ड कौन बनवा सकता है?">Who can get an e-Shram card?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="कोई भी असंगठित क्षेत्र का कामगार (जैसे मजदूर, रेहड़ी-पटरी वाले, घरेलू कामगार, ड्राइवर, किसान आदि) जिनकी आयु 16-59 वर्ष है, वे इसके पात्र हैं। वे EPFO/ESIC के सदस्य या आयकर दाता नहीं होने चाहिए।">
+                            Any unorganized sector worker (like laborers, street vendors, domestic help, drivers, farmers, etc.) aged 16-59 who is not an income tax payer or EPF/ESIC member is eligible.
+                        </p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4" data-hi="e-Shram कार्ड के क्या फायदे हैं?">What are the benefits of e-Shram Card?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="इसमें ₹2 लाख का मुफ्त दुर्घटना बीमा, आयुष्मान भारत के तहत कैशलेस इलाज, पीएम-एसवाईएम योजना के तहत ₹3,000 की गारंटीड पेंशन और सभी सरकारी कल्याणकारी योजनाओं का सीधा लाभ मिलता है।">
+                            It provides ₹2 Lakh free accidental insurance, cashless health cover under PMJAY, guaranteed monthly pension of ₹3,000 under PM-SYM after 60, and direct benefits from various welfare schemes.
+                        </p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-2xl border border-surface-variant/40 shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+                        <h4 class="font-semibold text-sm pr-4" data-hi="क्या मुझे हर साल कार्ड रिन्यू करना होगा?">Do I need to renew the card every year?</h4>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0">
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="नहीं, कार्ड जीवन भर के लिए वैध है। रिन्यूअल की कोई ज़रूरत नहीं है। आपको केवल अपनी कोई जानकारी (जैसे मोबाइल नंबर, बैंक डिटेल्स) बदलने पर इसे अपडेट करना होगा।">
+                            No, the card is valid for life. There is no renewal fee or process. You only update it if your bank details, address, or mobile number change.
+                        </p>
+                    </div>
+                </details>
+            </div>
         </section>
 
         <!-- Final CTA -->
         <section class="py-8">
-            <div class="bg-white rounded-3xl p-6 text-center border border-primary-container/20 shadow-xl relative overflow-hidden">
+            <!-- PF CTA -->
+            <div class="mode-pf bg-white rounded-3xl p-6 text-center border border-primary-container/20 shadow-xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
                 <h2 class="font-display-lg text-xl mb-3 relative z-10 font-bold leading-tight" data-hi="क्या आप अपना पैसा पाने के लिए तैयार हैं?">Ready to get your money?</h2>
                 <p class="text-on-surface-variant text-xs mb-6 relative z-10 leading-relaxed" data-hi="10,000+ खुश ग्राहकों में शामिल हों, जिन्होंने बिना किसी सिरदर्द के अपना PF पाया।">Join 10,000+ happy clients who got their PF without headaches.</p>
-                <a class="w-full bg-primary text-on-primary py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2.5 relative z-10 pulse-cta" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20ready%20to%20withdraw%20my%20PF.%20Let's%20get%20started. / नमस्ते PF मित्रा, मैं अपना PF निकालने के लिए तैयार हूँ।" target="_blank" data-hi="अभी WhatsApp शुरू करें">
+                <a class="w-full bg-primary text-on-primary py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2.5 relative z-10 pulse-cta" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20ready%20to%20withdraw%20my%20PF.%20Let's%20get%20started." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mai%20apna%20PF%20nikalne%20ke%20liye%20ready%20hu." target="_blank" data-hi="अभी WhatsApp शुरू करें">
+                    <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Start WhatsApp Now
+                </a>
+            </div>
+
+            <!-- e-Shram CTA -->
+            <div class="mode-shram hidden bg-white rounded-3xl p-6 text-center border border-primary-container/20 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+                <h2 class="font-display-lg text-xl mb-3 relative z-10 font-bold leading-tight" data-hi="क्या आप अपना e-Shram कार्ड पाने के लिए तैयार हैं?">Ready to get your e-Shram Card?</h2>
+                <p class="text-on-surface-variant text-xs mb-6 relative z-10 leading-relaxed" data-hi="आज ही अपना UAN लिंक्ड e-Shram कार्ड बनवाएं और सरकारी योजनाओं के लाभ सुरक्षित करें।">Get your UAN linked e-Shram card and secure insurance benefits today.</p>
+                <a class="w-full bg-primary text-on-primary py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2.5 relative z-10 pulse-cta" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I'm%20ready%20to%20create%20my%20e-Shram%20Card.%20Let's%20get%20started." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mai%20e-Shram%20card%20banwane%20ke%20liye%20ready%20hu." target="_blank" data-hi="अभी WhatsApp शुरू करें">
                     <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
                     Start WhatsApp Now
                 </a>
@@ -460,8 +671,26 @@
         <div class="mt-10 text-[10px] text-on-surface-variant/40 tracking-tight">© 2026 PF MITRA. ALL RIGHTS RESERVED.</div>
     </footer>
 
+    <!-- Sticky Mobile Action Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white/80 backdrop-blur-xl border-t border-surface-variant/30 px-container-padding py-3 flex items-center gap-3 z-50 safe-bottom h-20">
+        <!-- PF action button -->
+        <a class="mode-pf flex-1 bg-primary text-white py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm font-bold active:scale-95 transition-all shadow-lg shadow-primary/20 text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20assistance%20with%20my%20PF%20withdrawal." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20PF%20withdrawal%20me%20help%20chahiye." target="_blank" data-hi="मदद चाहिए">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            Help Me
+        </a>
+        <!-- e-Shram action button -->
+        <a class="mode-shram hidden flex-1 bg-primary text-white py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm font-bold active:scale-95 transition-all shadow-lg shadow-primary/20 text-center" href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20I%20need%20assistance%20with%20my%20e-Shram%20Card." data-hi-href="https://wa.me/918689886552?text=Hi%20PF%20Mitra,%20mujhe%20e-Shram%20card%20banwane%20me%20help%20chahiye." target="_blank" data-hi="मदद चाहिए">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            Help Me
+        </a>
+        <button class="w-12 h-12 bg-surface-container-high text-on-surface rounded-2xl flex items-center justify-center active:scale-90 transition-transform" id="shareBtn">
+            <span class="material-symbols-outlined text-xl">share</span>
+        </button>
+    </div>
+
     <script>
         (function() {
+            // Why Trust feature-cards observer
             const cards = document.querySelectorAll('.feature-card');
             const observerOptions = {
                 root: null,
@@ -482,28 +711,74 @@
 
             // Native Share Implementation
             const shareBtn = document.getElementById('shareButton');
-            if (shareBtn) {
-                shareBtn.addEventListener('click', async () => {
-                    if (navigator.share) {
-                        try {
-                            await navigator.share({
-                                title: 'PF Mitra - Expert PF Withdrawal',
-                                text: 'Get your PF withdrawn easily with expert help from PF Mitra.',
-                                url: window.location.origin
-                            });
-                        } catch (err) {
-                            console.log('Error sharing:', err);
-                        }
-                    } else {
-                        alert('Sharing is not supported on this browser. Copy link: ' + window.location.origin);
+            const mobileShareBtn = document.getElementById('shareBtn');
+            const handleShare = async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'PF Mitra - Expert PF & e-Shram Support',
+                            text: 'Get your PF withdrawn and e-Shram card created easily with expert help.',
+                            url: window.location.origin
+                        });
+                    } catch (err) {
+                        console.log('Error sharing:', err);
                     }
-                });
-            }
+                } else {
+                    alert('Sharing is not supported on this browser. Copy link: ' + window.location.origin);
+                }
+            };
+            if (shareBtn) shareBtn.addEventListener('click', handleShare);
+            if (mobileShareBtn) mobileShareBtn.addEventListener('click', handleShare);
         })();
     </script>
 
-    
+    <script>
+        // Service Switcher Logic
+        (function() {
+            const btnPf = document.getElementById('service-pf');
+            const btnShram = document.getElementById('service-shram');
 
+            function setService(mode) {
+                if (mode === 'shram') {
+                    if (btnShram) {
+                        btnShram.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                        btnShram.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnPf) {
+                        btnPf.classList.add('text-on-surface-variant');
+                        btnPf.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                    }
+                    
+                    // Show e-Shram components, hide PF components
+                    document.querySelectorAll('.mode-shram').forEach(el => el.classList.remove('hidden'));
+                    document.querySelectorAll('.mode-pf').forEach(el => el.classList.add('hidden'));
+                } else {
+                    if (btnPf) {
+                        btnPf.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                        btnPf.classList.remove('text-on-surface-variant');
+                    }
+                    if (btnShram) {
+                        btnShram.classList.add('text-on-surface-variant');
+                        btnShram.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                    }
+                    
+                    // Show PF components, hide e-Shram components
+                    document.querySelectorAll('.mode-pf').forEach(el => el.classList.remove('hidden'));
+                    document.querySelectorAll('.mode-shram').forEach(el => el.classList.add('hidden'));
+                }
+                localStorage.setItem('preferred-service', mode);
+            }
+
+            if (btnPf && btnShram) {
+                btnPf.addEventListener('click', () => setService('pf'));
+                btnShram.addEventListener('click', () => setService('shram'));
+                
+                // Load saved preference
+                const savedService = localStorage.getItem('preferred-service') || 'pf';
+                setService(savedService);
+            }
+        })();
+    </script>
 
     <script>
         // Language Switcher Logic
@@ -574,37 +849,7 @@
                 const savedLang = localStorage.getItem('preferred-lang') || 'en';
                 setTimeout(() => setLanguage(savedLang), 50);
             }
-
-            // Sync language across windows/tabs
-            window.addEventListener('storage', (e) => {
-                if (e.key === 'preferred-lang') {
-                    setLanguage(e.newValue);
-                }
-            });
-            window.addEventListener('langChanged', (e) => {
-                const lang = e.detail;
-                if (lang === 'hi') {
-                    if (btnHi) {
-                        btnHi.classList.add('bg-primary', 'text-on-primary');
-                        btnHi.classList.remove('text-on-surface-variant');
-                    }
-                    if (btnEn) {
-                        btnEn.classList.add('text-on-surface-variant');
-                        btnEn.classList.remove('bg-primary', 'text-on-primary');
-                    }
-                } else {
-                    if (btnEn) {
-                        btnEn.classList.add('bg-primary', 'text-on-primary');
-                        btnEn.classList.remove('text-on-surface-variant');
-                    }
-                    if (btnHi) {
-                        btnHi.classList.add('text-on-surface-variant');
-                        btnHi.classList.remove('bg-primary', 'text-on-primary');
-                    }
-                }
-            });
         })();
     </script>
-
 </body>
 </html>
