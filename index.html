@@ -126,6 +126,10 @@
             will-change: transform, opacity, background-color;
             z-index: 1;
         }
+        .service-highlight-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, opacity, background-color;
+        }
         .feature-card .icon-container {
             background-color: rgba(0, 109, 47, 0.08);
             color: #006d2f;
@@ -354,6 +358,23 @@
         }
         body.theme-shram footer button#shareButton {
             background-color: rgba(224, 90, 16, 0.08) !important;
+        }
+
+        /* Service highlight card popup style */
+        body.theme-shram .service-highlight-card.active {
+            background-color: #e05a10 !important;
+            color: #ffffff !important;
+            border-color: transparent !important;
+            box-shadow: 0 12px 24px rgba(224, 90, 16, 0.2) !important;
+            transform: scale(1.05) translateY(-4px) !important;
+        }
+        body.theme-shram .service-highlight-card.active .material-symbols-outlined,
+        body.theme-shram .service-highlight-card.active h4,
+        body.theme-shram .service-highlight-card.active p {
+            color: #ffffff !important;
+        }
+        body.theme-shram .service-highlight-card.active div.w-10 {
+            background-color: rgba(255, 255, 255, 0.2) !important;
         }
     </style>
 </head>
@@ -662,14 +683,14 @@
                 </div>
 
                 <!-- Benefit 5 -->
-                <div class="bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
+                <div class="service-highlight-card bg-white p-5 rounded-2xl border border-surface-variant/20 shadow-sm flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
                         <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="बिना गलती के फ़ास्ट रजिस्ट्रेशन">Fast & Error-Free Registration</h4>
-                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="फॉर्म भरने की झंझट और गलतियों से बचें। हम टेक्निकल डाटा एंट्री और काम की कोडिंग बिल्कुल सही करेंगे ताकि क्लेम पहली बार में पास हो।">
-                            Avoid the "form-filling" frustration. We handle the technical data entry and correct occupation coding to ensure your application is submitted perfectly the first time.
+                        <h4 class="font-bold text-sm text-on-surface mb-1" data-hi="सुपर-फास्ट रजिस्ट्रेशन (PF मित्रा द्वारा)">Super-Fast Registration (via PF Mitra)</h4>
+                        <p class="text-on-surface-variant text-xs leading-relaxed" data-hi="पोर्टल की दिक्कतों और फॉर्म भरने की माथापच्ची से बचें। हमारे एक्सपर्ट्स सिर्फ 5 मिनट में आपका सही NCO कोड चुनकर रजिस्ट्रेशन कर देंगे।">
+                            Avoid all portal glitches and form frustration. Our experts will handle your NCO coding and register your card in just 5 minutes.
                         </p>
                     </div>
                 </div>
@@ -916,6 +937,21 @@
             }, observerOptions);
 
             cards.forEach(card => observer.observe(card));
+
+            // Service highlight card observer
+            const highlightCard = document.querySelector('.service-highlight-card');
+            if (highlightCard) {
+                const highlightObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        } else {
+                            entry.target.classList.remove('active');
+                        }
+                    });
+                }, { threshold: 0.6 });
+                highlightObserver.observe(highlightCard);
+            }
 
             // Native Share Implementation
             const shareBtn = document.getElementById('shareButton');
